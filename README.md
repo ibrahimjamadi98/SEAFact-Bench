@@ -1,5 +1,7 @@
 # SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23330002.svg)](https://doi.org/10.5281/zenodo.23330002)
+
 This repository contains the code, the pre-registration file and the results of the paper
 
 > I. Mohd Jamadi and S. Anuar, "Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction," manuscript under review, 2026.
@@ -77,7 +79,17 @@ Budgeted re-ranking uses the GAINER implementation (Gain-Aware Allocation for Ne
 
 ## Citation
 
+Code and results: Zenodo, [doi:10.5281/zenodo.23330002](https://doi.org/10.5281/zenodo.23330002) (all versions).
+
 ```bibtex
+@software{mohdjamadi2026seafactcode,
+  author    = {Mohd Jamadi, Ibrahim and Anuar, Syahid},
+  title     = {{SEAFact-Bench}: Budget-Aware Retrieval-Augmented Fact-Checking for {M}alay and {V}ietnamese (code and results)},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23330002}
+}
+
 @unpublished{mohdjamadi2026seafact,
   author = {Mohd Jamadi, Ibrahim and Anuar, Syahid},
   title  = {Budget-Aware Retrieval-Augmented Fact-Checking for {M}alay and {V}ietnamese: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction},

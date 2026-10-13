@@ -4,6 +4,8 @@ title: "SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Malay 
 type: software
 version: "1.0.0"
 date-released: "2026-10-13"
+doi: "10.5281/zenodo.23330002"
+repository-code: "https://github.com/ibrahimjamadi98/SEAFact-Bench"
 license: MIT
 authors:
   - family-names: "Jamadi"
