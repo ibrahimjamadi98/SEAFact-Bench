@@ -1,0 +1,142 @@
+{
+ "sha256": "705661ed59fa21f22f4d62070131c95cd94d1dd0eb108de4fc637dc99db74cfa",
+ "registered_utc": "2026-10-12T10:10:38.825992+00:00",
+ "prereg": {
+  "title": "Budget-Aware Retrieval-Augmented Fact-Checking for Southeast Asian Languages",
+  "data": "Open datasets only: SEBENARNYA-Fact v1.0 (ms), ViFactCheck (vi), X-FACT id/hi/bn/ta (verdict only), SciFact (en, source only).",
+  "hypotheses": {
+   "H1": "Hybrid retrieval (BM25 + BGE-M3) beats the best single retriever (chosen on dev) in macro nDCG@10 over the ms and vi test sets.",
+   "H2": "Fine-tuned BGE-M3 beats zero-shot BGE-M3 in nDCG@10 on the paraphrased subset (low-overlap subset if no paraphrases are supplied).",
+   "H3": "Multilingual GAINER beats the score-based cascade (Current Rank) in macro nDCG@10 at B = 0.50 under leave-one-language-out training.",
+   "H4": "Verdict macro-F1 of the primary verdict model is lower with retrieved evidence (full depth, k = 3) than with gold evidence.",
+   "H5": "End-to-end verdict macro-F1 with GAINER at B = 0.50 is non-inferior to full depth within a margin of delta macro-F1 points.",
+   "H6": "Multilingual GAINER beats SEE (exit before block 0, threshold calibrated on source languages) in macro nDCG@10 at B = 0.50 under leave-one-language-out training."
+  },
+  "families": {
+   "F1": [
+    "H1",
+    "H2",
+    "H3",
+    "H6"
+   ],
+   "F2": [
+    "H4",
+    "H5"
+   ]
+  },
+  "tests": {
+   "H1-H3, H6": "Two-sided paired sign-flip randomisation test stratified by language; statistic = macro (over languages) mean per-query difference; Holm within F1.",
+   "H4": "Two-sided paired swap randomisation test on per-claim predictions; statistic = macro (over languages) difference in macro-F1; Holm within F2.",
+   "H5": "Supported if the lower bound of the stratified bootstrap 95% CI of the macro-F1 difference (B = 0.50 minus full depth) lies above -delta.",
+   "CI": "Stratified bootstrap (resampling claims within language)."
+  },
+  "primary": {
+   "primary_backbone": "BGE-reranker-v2-m3",
+   "primary_budget": 0.5,
+   "primary_verdict_model": "Qwen2.5-7B-Instruct",
+   "primary_llm_shots": 3,
+   "e2e_all_claims": true,
+   "noninferiority_delta": 1.0,
+   "temporal_cutoff": "2025-01-01",
+   "evidence_k": 3,
+   "hybrid_dense": "BGE-M3",
+   "hybrid_weight": 0.5,
+   "candidates_k": 50
+  },
+  "settings": {
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "budgets": [
+    0.25,
+    0.35,
+    0.5,
+    0.65,
+    0.8,
+    1.0
+   ],
+   "train_budgets": [
+    0.25,
+    0.35,
+    0.5,
+    0.65,
+    0.8
+   ],
+   "source_query_cap": 600,
+   "holdout_fraction": 0.2,
+   "pairs_per_group": 32,
+   "max_pairs_per_transition": 300000,
+   "dagger_rounds": 1,
+   "head_hidden": 160,
+   "head_lr": 0.002,
+   "head_batch": 512,
+   "head_epochs": 25,
+   "head_patience": 5,
+   "weight_decay": 0.0001,
+   "lr": 0.001,
+   "batch": 4096,
+   "ranker_epochs": 30,
+   "patience": 6,
+   "n_permutations": 100000,
+   "ce_doc_text": "best_passage",
+   "ce_passage_words": 200,
+   "n_permutations_f1": 10000,
+   "n_bootstrap": 10000,
+   "alpha": 0.05,
+   "abstain_target_coverage": 0.95,
+   "selective_coverage": 0.8,
+   "xfact_languages": [
+    "id",
+    "hi",
+    "bn",
+    "ta"
+   ],
+   "classifier_hf": "xlm-roberta-large",
+   "llms": {
+    "Qwen2.5-7B-Instruct": "Qwen/Qwen2.5-7B-Instruct"
+   },
+   "llm_shots": [
+    0,
+    3
+   ],
+   "llm_max_per_lang": 300,
+   "dense_models": {
+    "BGE-M3": "BAAI/bge-m3",
+    "multilingual-E5": "intfloat/multilingual-e5-large",
+    "Qwen3-Embedding-0.6B": "Qwen/Qwen3-Embedding-0.6B"
+   }
+  },
+  "backbones": {
+   "BGE-reranker-v2-m3": {
+    "hf": "BAAI/bge-reranker-v2-m3",
+    "checkpoints": [
+     4,
+     8,
+     12,
+     16,
+     20,
+     24
+    ],
+    "batch": 50,
+    "dtype": "float32"
+   },
+   "mMiniLM-L12": {
+    "hf": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+    "checkpoints": [
+     2,
+     4,
+     6,
+     8,
+     10,
+     12
+    ],
+    "batch": 50,
+    "dtype": "float32"
+   }
+  }
+ }
+}

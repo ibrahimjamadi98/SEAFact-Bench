@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this code or its results, please cite the associated paper."
+title: "SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese"
+type: software
+version: "1.0.0"
+date-released: "2026-10-13"
+license: MIT
+authors:
+  - family-names: "Jamadi"
+    given-names: "Ibrahim Mohd"
+    affiliation: "Faculty of Artificial Intelligence, Universiti Teknologi Malaysia (UTM), Kuala Lumpur, Malaysia"
+    email: "ibrahim98@graduate.utm.my"
+    orcid: "https://orcid.org/0009-0007-7571-3354"
+  - family-names: "Anuar"
+    given-names: "Syahid"
+    affiliation: "Faculty of Artificial Intelligence, Universiti Teknologi Malaysia (UTM), Kuala Lumpur, Malaysia"
+    email: "syahid.anuar@utm.my"
+    orcid: "https://orcid.org/0000-0001-7869-0257"
+keywords:
+  - fact-checking
+  - evidence retrieval
+  - cross-encoder re-ranking
+  - early exit
+  - Malay
+  - Vietnamese
+preferred-citation:
+  type: unpublished
+  title: "Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction"
+  authors:
+    - family-names: "Jamadi"
+      given-names: "Ibrahim Mohd"
+    - family-names: "Anuar"
+      given-names: "Syahid"
+  year: 2026
+  notes: "Manuscript under review"

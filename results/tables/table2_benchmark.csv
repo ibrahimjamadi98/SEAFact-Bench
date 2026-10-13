@@ -1,0 +1,8 @@
+Collection,Language,Claims (train / dev / test),Evidence pool,Low-overlap (test),Paraphrased,No-match,Verdict labels,Role
+SEBENARNYA-Fact,Malay,2971 / 330 / 738,4039,185,0,200,"Refutes: 2364, Context: 1658, Supports: 17",target + source
+SciFact,English,809 / 0 / 300,5183,0,0,0,none (source only),source only (re-ranker)
+ViFactCheck,Vietnamese,5062 / 723 / 1447,1041,364,0,200,"Supports: 2515, Refutes: 2370, Context: 2347",target + source
+X-FACT,Bengali,0 / 0 / 568,provided snippets,—,0,0,"Refutes: 567, Supports: 1",verdict only
+X-FACT,Hindi,845 / 112 / 170,provided snippets,—,0,0,Refutes: 1127,verdict only
+X-FACT,Indonesian,2231 / 297 / 448,provided snippets,—,0,0,"Refutes: 2492, Context: 298, Supports: 186",verdict only
+X-FACT,Tamil,1097 / 145 / 221,provided snippets,—,0,0,"Refutes: 1078, Supports: 385",verdict only

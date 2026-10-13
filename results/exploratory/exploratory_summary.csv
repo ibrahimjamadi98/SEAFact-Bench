@@ -1,0 +1,18 @@
+backbone,variant,Malay (mean),Vietnamese (mean),Malay (SD over seeds),Vietnamese (SD over seeds),Macro
+BGE-reranker-v2-m3,all_languages,0.8187,0.9772,0.003,0.002,0.8979
+BGE-reranker-v2-m3,cls_standardised,0.7105,0.9164,0.0216,0.0357,0.8134
+BGE-reranker-v2-m3,features_only,0.7499,0.9466,0.0277,0.0176,0.8483
+BGE-reranker-v2-m3,in_language,0.8132,0.9796,0.0028,0.0014,0.8964
+BGE-reranker-v2-m3,no_dagger,0.7389,0.9319,0.0301,0.0311,0.8354
+BGE-reranker-v2-m3,registered,0.7229,0.9166,0.0453,0.0513,0.8198
+mMiniLM-L12,cls_standardised,0.7592,0.9265,0.0087,0.0188,0.8428
+mMiniLM-L12,features_only,0.7803,0.9546,0.0069,0.0036,0.8675
+mMiniLM-L12,registered,0.789,0.9547,0.0035,0.0017,0.8719
+BGE-reranker-v2-m3,[reference] First-stage order,0.8294,0.9666,,,0.898
+BGE-reranker-v2-m3,[reference] Current Rank,0.5396,0.7189,,,0.6293
+BGE-reranker-v2-m3,[reference] SEE,0.7542,0.975,,,0.8646
+BGE-reranker-v2-m3,[reference] Full depth,0.8173,0.9778,,,0.8976
+mMiniLM-L12,[reference] First-stage order,0.8294,0.9666,,,0.898
+mMiniLM-L12,[reference] Current Rank,0.3189,0.6621,,,0.4905
+mMiniLM-L12,[reference] SEE,0.7419,0.9643,,,0.8531
+mMiniLM-L12,[reference] Full depth,0.788,0.9639,,,0.876

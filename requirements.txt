@@ -1,0 +1,15 @@
+# Versions of the registered run. torch, numpy, pandas, scipy and matplotlib were those of the Google Colab image.
+transformers==4.52.4
+sentence-transformers==4.1.0
+accelerate==1.7.0
+datasets>=2.19,<4
+huggingface_hub>=0.30,<1.0
+bitsandbytes>=0.45
+pyarrow
+tqdm
+tabulate
+torch
+numpy
+pandas
+scipy
+matplotlib

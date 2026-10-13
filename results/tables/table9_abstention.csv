@@ -1,0 +1,3 @@
+Mechanism,Abstention precision,Abstention recall,Selective accuracy at 80% coverage
+Re-ranker score threshold,0.7319,0.3975,0.7922
+"LLM ""no matching evidence"" (Qwen2.5-7B-Instruct)",0.7235,0.34,0.4729

@@ -1,0 +1,4 @@
+Verdict model,Claim only,Gold evidence,Retrieved (full depth),Gap (gold − retrieved)
+XLM-RoBERTa (fine-tuned),47.19,73.09,60.7,12.39
+"Qwen2.5-7B-Instruct, zero-shot",32.03,40.73,44.31,-3.58
+"Qwen2.5-7B-Instruct, three-shot",46.13,43.72,42.59,1.13

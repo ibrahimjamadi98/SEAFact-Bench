@@ -1,0 +1,7 @@
+retriever,Malay,Vietnamese,Macro
+BM25,0.7995,0.967,0.8833
+BGE-M3,0.7851,0.8723,0.8287
+multilingual-E5,0.7589,0.895,0.8269
+Qwen3-Embedding-0.6B,0.7871,0.8673,0.8272
+BGE-M3 (fine-tuned),0.7994,0.8856,0.8425
+BM25 + BGE-M3 (hybrid),0.8315,0.961,0.8963

@@ -1,0 +1,14 @@
+collection,label_native,label,claims
+SEBENARNYA-Fact,clarification,Context,1264
+SEBENARNYA-Fact,false,Refutes,2279
+SEBENARNYA-Fact,misleading,Refutes,85
+SEBENARNYA-Fact,true,Supports,17
+SEBENARNYA-Fact,warning,Context,394
+ViFactCheck,0,Supports,2515
+ViFactCheck,1,Refutes,2370
+ViFactCheck,2,Context,2347
+X-FACT,false,Refutes,2797
+X-FACT,mostly false,Refutes,852
+X-FACT,other,Context,298
+X-FACT,partly true/misleading,Refutes,1615
+X-FACT,true,Supports,572

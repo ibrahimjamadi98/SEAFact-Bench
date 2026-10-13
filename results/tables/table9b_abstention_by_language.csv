@@ -1,0 +1,5 @@
+mechanism,language,tau,abstention_precision,abstention_recall,selective_accuracy_80,accuracy_full_coverage,n_normal,n_nomatch,n_dev
+Re-ranker score threshold,Malay,2.2012,0.7397,0.27,0.8866,0.8645,738,200,300
+Re-ranker score threshold,Vietnamese,-0.0501,0.7241,0.525,0.6978,0.6448,1447,200,300
+"LLM ""no matching evidence"" (Qwen2.5-7B-Instruct)",Malay,0.081,0.5581,0.24,0.4208,0.4467,300,200,150
+"LLM ""no matching evidence"" (Qwen2.5-7B-Instruct)",Vietnamese,0.0008,0.8889,0.44,0.525,0.5267,300,200,150

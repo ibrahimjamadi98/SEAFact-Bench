@@ -1,0 +1,12 @@
+method,Malay,Vietnamese,Macro,Compute
+First-stage order,0.8749,0.9646,0.9197,0.0
+Fixed depth,0.2407,0.5968,0.4188,0.5
+FixedResidual,0.2407,0.5968,0.4188,0.5
+Current Rank,0.4911,0.6754,0.5833,0.5
+Boundary,0.2246,0.5379,0.3813,0.5
+Patience,0.6806,0.7014,0.691,0.832
+SEE,0.8304,0.9689,0.8996,0.5869
+Random,0.2945,0.411,0.3527,0.5
+GAINER,0.8342,0.9593,0.8967,0.5
+Oracle (reference),0.8901,0.9776,0.9339,0.5
+Full depth,0.8635,0.9681,0.9158,1.0
