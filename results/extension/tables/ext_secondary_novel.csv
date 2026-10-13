@@ -1,0 +1,5 @@
+ID,Comparison,Effect,95% CI,p (unadjusted)
+E1,"BM25 + BGE-M3 (hybrid) − BGE-M3 (best single on dev), novel subset",0.0065,"[-0.0116, +0.0250]",0.4939150608493915
+E2,"BGE-M3 (fine-tuned) − zero-shot, low-overlap subset, novel subset",0.0536,"[+0.0230, +0.0846]",0.0005399946000539995
+E3,"GAINER − Current Rank at B = 0.5, LOLO, BGE-reranker-v2-m3, novel subset",0.0573,"[+0.0376, +0.0768]",9.99990000099999e-06
+E4,"GAINER − SEE at B = 0.5, LOLO, BGE-reranker-v2-m3, novel subset",-0.2166,"[-0.2422, -0.1897]",9.99990000099999e-06

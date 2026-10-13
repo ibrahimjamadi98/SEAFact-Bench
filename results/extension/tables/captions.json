@@ -1,0 +1,17 @@
+{
+ "ext_table_benchmark": "Extension: posts, fact-check pools and subsets per language (Zawgyi converted: 81 posts, 0 fact-checks)",
+ "ext_table_retrieval": "Extension: retrieval nDCG@10 on the test posts",
+ "ext_table_retrieval_recall10": "Extension: Recall@10 (test)",
+ "ext_table_retrieval_mrr10": "Extension: MRR@10 (test)",
+ "ext_table_retrieval_low_overlap": "Extension: nDCG@10 on the low-overlap test subset",
+ "ext_table_retrieval_novel": "Extension: nDCG@10 on the novel test subset (secondary)",
+ "ext_table_retrieval_dev": "Extension: dev nDCG@10 (chooses the best single retriever for E1)",
+ "ext_pool_recall50": "Extension: hybrid top-50 candidate lists on the test posts, Hit@50 and Recall@50",
+ "ext_leak_test": "Extension: leak test (decisions with unpaid computation replaced by noise)",
+ "ext_fold_sources": "Extension: source languages used to train the allocator for each target",
+ "ext_table_rerank_BGE-reranker-v2-m3": "Extension: re-ranking nDCG@10 at B = 0.50, leave-one-language-out (BGE-reranker-v2-m3, mean of 5 seeds)",
+ "ext_table_rerank_mMiniLM-L12": "Extension: re-ranking nDCG@10 at B = 0.50, leave-one-language-out (mMiniLM-L12, mean of 5 seeds)",
+ "ext_secondary_novel": "Extension, secondary: the E1\u2013E4 comparisons on the novel test subset",
+ "ext_secondary_mMiniLM-L12": "Extension, secondary: replication with mMiniLM-L12",
+ "ext_table_hypotheses": "Extension: pre-registered hypotheses E1\u2013E4 (nDCG@10 effects as fractions)"
+}

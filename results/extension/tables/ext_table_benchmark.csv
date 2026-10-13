@@ -1,0 +1,5 @@
+Language,Posts (train / dev / test),Fact-check pool,Relevant per post,Low-overlap (test),Novel (test),Test from,Source posts
+Indonesian,951 / 98 / 418,10792,1.07,107,409,2022-09-22,600
+Thai,499 / 51 / 218,693,1.0,55,217,2022-03-12,499
+Malay (posts),310 / 33 / 142,481,1.01,36,136,2022-08-23,310
+Burmese,190 / 21 / 88,329,1.01,22,86,2023-02-05,190

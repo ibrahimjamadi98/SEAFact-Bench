@@ -1,0 +1,5 @@
+ID,Hypothesis,Comparison,Effect,95% CI,p,Holm p,Supported
+E1,Hybrid retrieval (BM25 + BGE-M3) beats the best single retriever (chosen on dev) in macro nDCG@10 over the four new test sets.,BM25 + BGE-M3 (hybrid) − BGE-M3 (best single on dev),0.0065,"[-0.0114, +0.0250]",0.48160518394816054,0.48160518394816054,no
+E2,BGE-M3 fine-tuned on the training posts beats zero-shot BGE-M3 in nDCG@10 on the low-overlap test subset.,"BGE-M3 (fine-tuned) − zero-shot, low-overlap subset",0.0524,"[+0.0238, +0.0807]",0.00034999650003499967,0.0006999930000699993,yes
+E3,Multilingual GAINER beats the score-based cascade (Current Rank) in macro nDCG@10 at B = 0.50 under leave-one-language-out training.,"GAINER − Current Rank at B = 0.5, LOLO, BGE-reranker-v2-m3",0.0608,"[+0.0416, +0.0808]",9.99990000099999e-06,3.999960000399996e-05,yes
+E4,"Multilingual GAINER beats SEE (exit before block 0, threshold calibrated on source languages) in macro nDCG@10 at B = 0.50 under leave-one-language-out training.","GAINER − SEE at B = 0.5, LOLO, BGE-reranker-v2-m3",-0.2182,"[-0.2439, -0.1921]",9.99990000099999e-06,3.999960000399996e-05,no

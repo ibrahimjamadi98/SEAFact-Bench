@@ -1,0 +1,120 @@
+{
+ "sha256": "a04550ff5f8d265a7e960ba2f1c23b9140fd1d88c16d3896affe10c5ab415b7a",
+ "registered_utc": "2026-10-13T10:23:14.801119+00:00",
+ "prereg": {
+  "title": "SEAFact-Bench extension: claim matching for social-media posts in Indonesian, Thai, Malay and Burmese",
+  "extends": {
+   "prereg_sha256": "705661ed59fa21f22f4d62070131c95cd94d1dd0eb108de4fc637dc99db74cfa",
+   "note": "The registered analysis is unchanged; this addendum adds a second retrieval track, evaluated after it with the same code."
+  },
+  "data": "MultiClaim v2 (Pikuliak et al., 2023), obtained from its authors under their terms of use and not redistributed: posts, fact-checks and post-fact-check pairs.",
+  "construction": {
+   "fact_check_language": "Detected language of the claim. A record detected as Malay or Indonesian takes the language of its publisher (Malay: semakanfakta.afp.com or a .my domain; Indonesian: cekfakta.com, tempo.co, periksafakta.afp.com, turnbackhoax.id or an .id domain); a record with both or neither keeps the detected language.",
+   "post_language": "A post detected as Malay or Indonesian takes the language of most of its matched fact-checks (ties: the detected language); Thai and Burmese posts must be detected as such.",
+   "pairs": "All three relationship types; only fact-checks in the language of the post are relevant.",
+   "query_text": "Post text and OCR text in the original language. Exact duplicate posts within a language are merged (earliest date, union of relevant fact-checks).",
+   "document_text": "Fact-check claim and title in the original language.",
+   "burmese_encoding": "Text with a myanmartools Zawgyi probability above 0.95 is converted to Unicode with the ICU Zawgyi-my transform.",
+   "tokenization": "BM25 and overlap: the registered tokenizer for Malay and Indonesian; PyThaiNLP newmm for Thai; syllable segmentation (sylbreak rules) for Burmese.",
+   "split": "Per language, the latest 30% of dated posts (by first appearance) form the test set; the latest 10% of the remaining dated posts form the dev set; the other posts, including undated ones, are training posts.",
+   "source_queries": "Up to source_query_cap training posts per language, sampled once with source_seed.",
+   "subsets": "Low-overlap: lowest quartile of post-to-relevant-fact-check Jaccard overlap per language (test). Novel: test posts none of whose relevant fact-checks is relevant to a training or dev post.",
+   "leave_one_language_out": "For each new target language, the exit heads and rankers are trained on the source queries of every other language of both tracks (SEBENARNYA-Fact, ViFactCheck, SciFact and the other new languages). Malay and Indonesian form one group: when either is the target, no Malay or Indonesian query is used for training."
+  },
+  "hypotheses": {
+   "E1": "Hybrid retrieval (BM25 + BGE-M3) beats the best single retriever (chosen on dev) in macro nDCG@10 over the four new test sets.",
+   "E2": "BGE-M3 fine-tuned on the training posts beats zero-shot BGE-M3 in nDCG@10 on the low-overlap test subset.",
+   "E3": "Multilingual GAINER beats the score-based cascade (Current Rank) in macro nDCG@10 at B = 0.50 under leave-one-language-out training.",
+   "E4": "Multilingual GAINER beats SEE (exit before block 0, threshold calibrated on source languages) in macro nDCG@10 at B = 0.50 under leave-one-language-out training."
+  },
+  "families": {
+   "FE": [
+    "E1",
+    "E2",
+    "E3",
+    "E4"
+   ]
+  },
+  "tests": {
+   "E1-E4": "Two-sided paired sign-flip randomisation test stratified by language; statistic = macro (over languages) mean per-query difference; Holm within FE.",
+   "CI": "Stratified bootstrap (resampling posts within language).",
+   "decision": "Supported if the Holm-adjusted p-value is below alpha and the effect has the hypothesised sign."
+  },
+  "secondary": [
+   "E1-E4 comparisons on the novel subset (effects and confidence intervals, unadjusted p-values).",
+   "Recall@10 and MRR@10 for every retriever; per-language results; the mMiniLM-L12 replication of E3 and E4."
+  ],
+  "not_evaluated": "Verdict prediction (the matched fact-check states the verdict), abstention, and latency (candidate lists have the registered length, so the registered latency measurements apply).",
+  "primary": {
+   "primary_backbone": "BGE-reranker-v2-m3",
+   "primary_budget": 0.5,
+   "hybrid_dense": "BGE-M3",
+   "hybrid_weight": 0.5,
+   "candidates_k": 50
+  },
+  "settings": {
+   "multiclaim_dir": null,
+   "multiclaim_zip": null,
+   "languages": [
+    "id",
+    "th",
+    "ms-mc",
+    "my"
+   ],
+   "relationships": [
+    "claimreview_schema",
+    "backlink",
+    "similarity:identical"
+   ],
+   "malay_publishers": [
+    "semakanfakta.afp.com"
+   ],
+   "malay_suffixes": [
+    ".my"
+   ],
+   "indonesian_publishers": [
+    "cekfakta.com",
+    "tempo.co",
+    "periksafakta.afp.com",
+    "turnbackhoax.id"
+   ],
+   "indonesian_suffixes": [
+    ".id"
+   ],
+   "zawgyi_threshold": 0.95,
+   "test_fraction": 0.3,
+   "dev_fraction": 0.1,
+   "source_seed": 20261013,
+   "language_groups": {
+    "ms": "ms-id",
+    "ms-mc": "ms-id",
+    "id": "ms-id"
+   },
+   "dense_models": {
+    "BGE-M3": "BAAI/bge-m3",
+    "multilingual-E5": "intfloat/multilingual-e5-large",
+    "Qwen3-Embedding-0.6B": "Qwen/Qwen3-Embedding-0.6B"
+   },
+   "finetune": {
+    "model": "BGE-M3",
+    "epochs": 1,
+    "batch": 16,
+    "lr": 1e-05,
+    "max_len": 256,
+    "warmup_ratio": 0.1
+   },
+   "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "source_query_cap": 600,
+   "low_overlap_quantile": 0.25,
+   "n_permutations": 100000,
+   "n_bootstrap": 10000,
+   "alpha": 0.05
+  }
+ }
+}

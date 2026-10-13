@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
-  "title": "SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese (code and results)",
-  "description": "<p>Code, pre-registration file and results of the paper <em>Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction</em> (I. Mohd Jamadi and S. Anuar, manuscript under review, 2026).</p><p>The Google Colab notebook builds the Southeast Asian Fact-checking Benchmark (SEAFact-Bench) from openly downloadable datasets (SEBENARNYA-Fact, ViFactCheck, X-FACT and SciFact) and runs every experiment of the paper: first-stage retrieval, cross-encoder re-ranking under a compute budget, verdict prediction with gold and retrieved evidence, and abstention. The notebook is saved with the outputs of the registered run (pre-registration SHA-256 705661ed59fa21f22f4d62070131c95cd94d1dd0eb108de4fc637dc99db74cfa). The archive also contains all result tables, per-query results and the scripts that produce the figures and the title-cue analysis of the paper. No dataset is redistributed.</p>",
+  "title": "SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Southeast Asian Languages (code and results)",
+  "description": "<p>Code, pre-registration files and results of the paper <em>Budget-Aware Retrieval-Augmented Fact-Checking for Southeast Asian Languages: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction</em> (I. Mohd Jamadi and S. Anuar, manuscript under review, 2026).</p><p>The main Google Colab notebook builds the Southeast Asian Fact-checking Benchmark (SEAFact-Bench) from openly downloadable datasets (SEBENARNYA-Fact, ViFactCheck, X-FACT and SciFact) and runs every main-track experiment of the paper: first-stage retrieval, cross-encoder re-ranking under a compute budget, verdict prediction with gold and retrieved evidence, and abstention. It is saved with the outputs of the registered run (pre-registration SHA-256 705661ed59fa21f22f4d62070131c95cd94d1dd0eb108de4fc637dc99db74cfa).</p><p>Version 1.1.0 adds a separately pre-registered extension track that matches social-media posts to fact-checks in Indonesian, Thai, Malay and Burmese, built from MultiClaim v2 (obtained from its authors and not redistributed). The companion notebook is saved with the outputs of its registered run (pre-registration SHA-256 a04550ff5f8d265a7e960ba2f1c23b9140fd1d88c16d3896affe10c5ab415b7a), and its per-query results identify posts and fact-checks by identifier only.</p><p>The archive also contains all result tables, per-query results and the scripts that produce the figures and the title-cue analysis of the paper. No dataset is redistributed.</p>",
   "creators": [
     {
       "name": "Mohd Jamadi, Ibrahim",
@@ -24,7 +24,11 @@
     "retrieval-augmented generation",
     "Malay",
     "Vietnamese",
-    "pre-registration"
+    "pre-registration",
+    "Indonesian",
+    "Thai",
+    "Burmese",
+    "claim matching"
   ],
   "related_identifiers": [
     {
@@ -34,5 +38,6 @@
       "scheme": "doi"
     }
   ],
-  "notes": "Supported by Universiti Teknologi Malaysia under UTM NEXUS Translasi (PY/2025/00988)."
+  "notes": "Supported by Universiti Teknologi Malaysia under UTM NEXUS Translasi (PY/2025/00988).",
+  "version": "1.1.0"
 }

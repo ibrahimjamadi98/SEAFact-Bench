@@ -1,0 +1,9 @@
+backbone,target,sources
+BGE-reranker-v2-m3,id,"en, my, th, vi"
+BGE-reranker-v2-m3,th,"en, id, ms, ms-mc, my, vi"
+BGE-reranker-v2-m3,ms-mc,"en, my, th, vi"
+BGE-reranker-v2-m3,my,"en, id, ms, ms-mc, th, vi"
+mMiniLM-L12,id,"en, my, th, vi"
+mMiniLM-L12,th,"en, id, ms, ms-mc, my, vi"
+mMiniLM-L12,ms-mc,"en, my, th, vi"
+mMiniLM-L12,my,"en, id, ms, ms-mc, th, vi"

@@ -1,0 +1,3 @@
+Comparison,Effect,95% CI,p (unadjusted)
+"GAINER − Current Rank at B = 0.5, mMiniLM-L12",0.1673,"[+0.1399, +0.1951]",9.99990000099999e-06
+"GAINER − SEE at B = 0.5, mMiniLM-L12",-0.0235,"[-0.0445, -0.0028]",0.03690963090369096

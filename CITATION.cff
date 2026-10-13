@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this code or its results, please cite the associated paper."
-title: "SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese"
+title: "SEAFact-Bench: Budget-Aware Retrieval-Augmented Fact-Checking for Southeast Asian Languages"
 type: software
-version: "1.0.0"
+version: "1.1.0"
 date-released: "2026-10-13"
 doi: "10.5281/zenodo.23330002"
 repository-code: "https://github.com/ibrahimjamadi98/SEAFact-Bench"
@@ -25,9 +25,13 @@ keywords:
   - early exit
   - Malay
   - Vietnamese
+  - Indonesian
+  - Thai
+  - Burmese
+  - claim matching
 preferred-citation:
   type: unpublished
-  title: "Budget-Aware Retrieval-Augmented Fact-Checking for Malay and Vietnamese: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction"
+  title: "Budget-Aware Retrieval-Augmented Fact-Checking for Southeast Asian Languages: A Pre-Registered Benchmark of Evidence Retrieval, Early-Exit Re-Ranking, and Verdict Prediction"
   authors:
     - family-names: "Jamadi"
       given-names: "Ibrahim Mohd"
